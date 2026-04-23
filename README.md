@@ -1,10 +1,10 @@
 # IFPI - Campus Piripiri
 ## Tecnologia em Análise e Desenvolvimento de Sistemas
 
-**Professor:** Jonathas Jivago
-**Disciplina:** Estrutura de Dados II
-**Alunos:** Francisco Mailson, Vitor Lopes, Mateus Araujo  
-**Módulo:** III  
+**Professor:** Jonathas Jivago<br>
+**Disciplina:** Estrutura de Dados II<br>
+**Alunos:** Francisco Mailson, Vitor Lopes, Mateus Araujo<br>
+**Módulo:** III<br>  
 
 ---
 
