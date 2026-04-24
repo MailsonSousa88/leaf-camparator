@@ -68,27 +68,41 @@ export class Arvore {
     this.preOrdem(no.dir);
   }
 
+  // Percorre a árvore em profundidade (DFS) da esquerda para a direita
+  // e guarda no array apenas os valores dos nós folha
   private coletarFolhasRec(no: No | null, folhas: number[]): number[] {
+
+    // Se o nó não existe, encerra essa chamada
     if (no == null) 
         return folhas;
 
-    // É folha?
+    // Se não possui filhos, é folha → guarda o valor
     if (no.esq == null && no.dir == null) {
       folhas.push(no.valor);
     }
 
+    // Primeiro percorre toda a subárvore da esquerda
     this.coletarFolhasRec(no.esq, folhas);
+
+    // Depois percorre toda a subárvore da direita
     this.coletarFolhasRec(no.dir, folhas);
 
+    // Retorna o array com as folhas coletadas na ordem correta
     return folhas;
   }
 
+
+  // Compara a sequência de folhas de duas árvores
   public folhasSemelhantesRec(arvoreComparada: Arvore): boolean {
 
+    // Coleta as folhas da árvore que chamou o método (this)
     const folhas1: Array<number> = this.coletarFolhasRec(this.raiz, []);
+
+    // Coleta as folhas da árvore passada por parâmetro
     const folhas2: Array<number> = this.coletarFolhasRec(arvoreComparada.raiz, []);
 
-     return JSON.stringify(folhas1) === JSON.stringify(folhas2);
+    // Compara as duas sequências (valor e ordem)
+    return JSON.stringify(folhas1) === JSON.stringify(folhas2);
   }
 }
 
