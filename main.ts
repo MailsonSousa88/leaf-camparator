@@ -32,8 +32,6 @@ n6.esq = n8;
 let arvore: Arvore = new Arvore();
 arvore.raiz = raiz;
 
-arvore.preOrdem(raiz);
-
 // A árvore construída é a seguinte:
 //         20
 //        /  \
@@ -46,9 +44,9 @@ arvore.preOrdem(raiz);
 //    9
 
 // Árvore 1: Estrutura diferente, MAS folhas iguais (3, 9, 31)
-let raizA = new No(100);
-let a1 = new No(50);
-let a2 = new No(150);
+let raizA = new No(19);
+let a1 = new No(15);
+let a2 = new No(20);
 let a3 = new No(3);  // Folha 1
 let a4 = new No(9);  // Folha 2
 let a5 = new No(31); // Folha 3
@@ -60,20 +58,20 @@ a3.pai = a1;
 a4.pai = a1;    
 a5.pai = a2;    
 
-raizA.esq = a1; // 100 -> esq: 50
-raizA.dir = a2; // 100 -> dir: 150
-a1.esq = a3;    // 50 -> esq: 3 (FOLHA)
-a1.dir = a4;    // 50 -> dir: 9 (FOLHA)
-a2.dir = a5;    // 150 -> dir: 31 (FOLHA)
+raizA.esq = a1; // 19 -> esq: 15
+raizA.dir = a2; // 19 -> dir: 20
+a1.esq = a3;    // 15 -> esq: 3 (FOLHA)
+a1.dir = a4;    // 15 -> dir: 9 (FOLHA)
+a2.dir = a5;    // 20 -> dir: 31 (FOLHA)
 
 let arvore1: Arvore = new Arvore();
 arvore1.raiz = raizA;
 
-// Árvore 2: Folhas completamente diferentes (7, 14, 21)
-let raizB = new No(5);
-let b1 = new No(7);  // Folha 1
-let b2 = new No(10);
-let b3 = new No(14); // Folha 2
+// Árvore 2: Folhas completamente diferentes (5, 7, 21)
+let raizB = new No(10);
+let b1 = new No(5);  // Folha 1
+let b2 = new No(14);
+let b3 = new No(7); // Folha 2
 let b4 = new No(21); // Folha 3
 
 // Conectando os nós (Pai e Filhos)
@@ -82,9 +80,9 @@ b2.pai = raizB;
 b3.pai = b2;    
 b4.pai = b2;    
 
-raizB.esq = b1; // 5 -> esq: 7 (FOLHA)
-raizB.dir = b2; // 5 -> dir: 10
-b2.esq = b3;    // 10 -> esq: 14 (FOLHA)
+raizB.esq = b1; // 10 -> esq: 5 (FOLHA)
+raizB.dir = b2; // 10 -> dir: 14
+b2.esq = b3;    // 14 -> esq: 7 (FOLHA)
 b2.dir = b4;    // 10 -> dir: 21 (FOLHA)
 
 let arvore2: Arvore = new Arvore();
