@@ -30,3 +30,25 @@ Duas árvores binárias são consideradas **semelhantes em folhas** quando:
 - Árvore da direita → folhas: **3, 9, 12, 16, 29**
 
 Mesmo que as árvores possuam formatos diferentes, alturas diferentes e organizações internas distintas, elas são consideradas **semelhantes**, pois a sequência das folhas é idêntica.
+
+## Exemplo 1 - Git (Controle de Versões)
+
+O Git organiza o projeto inteiro em forma de árvore
+
+- Pastas são nós internos
+- Arquivos são as folhas
+  
+Quando o Git compara dois commits, ele não olha apenas a estrutura das pastas. Ele verifica se os arquivos finais (folhas) são iguais.
+Ou seja, Mesmo que os arquivos estejam organizados em pastas diferentes, se as folhas forem iguais, o conteúdo do projeto é o mesmo.
+
+Isso é exatamente o conceito de “folhas semelhantes” aplicado.
+
+## Exemplo 2 - IAs (Árvores de Decisão)
+
+Nas IAs, especialmente em modelos de árvore de decisão: Os nós internos são decisões (perguntas), e as folhas são os resultados finais (classificações ou previsões).
+
+Ao percorrer a árvore da esquerda para a direita, chegamos às respostas finais do modelo, comparar folhas em árvores diferentes nos permite:
+
+- verificar se dois modelos de IA tomam as mesmas decisões finais
+- validar se uma versão otimizada do modelo ainda produz os mesmos resultados
+- comparar comportamentos de algoritmos de decisão
