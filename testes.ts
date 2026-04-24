@@ -202,5 +202,5 @@ b2.dir = b4;    // 10 -> dir: 21 (FOLHA)
 let arvore2: Arvore = new Arvore();
 arvore2.raiz = raizB;
 
-console.log(arvore.folhasSemelhantesRec(arvore1));
-console.log(arvore.folhasSemelhantesRec(arvore2));
+console.log(`Sequência 1: ${arvore.folhasSemelhantesRec(arvore1)}`);
+console.log(`Sequência 2: ${arvore.folhasSemelhantesRec(arvore2)}`);
