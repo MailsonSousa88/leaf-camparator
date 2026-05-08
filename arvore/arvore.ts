@@ -105,26 +105,3 @@ export class Arvore {
     return JSON.stringify(folhas1) === JSON.stringify(folhas2);
   }
 }
-
-// private coletarFolhasPilha(raiz: No | null): number[] {
-//     const folhas: number[] = [];
-//     if (raiz == null) return folhas;
-
-//     const pilha: No[] = [];
-//     pilha.push(raiz);
-
-//     while (pilha.length > 0) {
-//         const atual = pilha.pop()!;
-
-//         // Empilha direita primeiro
-//         if (atual.dir != null) pilha.push(atual.dir);
-//         if (atual.esq != null) pilha.push(atual.esq);
-
-//         // É folha?
-//         if (atual.esq == null && atual.dir == null) {
-//             folhas.push(atual.valor);
-//         }
-//     }
-
-//     return folhas;
-// }
