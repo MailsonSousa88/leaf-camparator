@@ -68,6 +68,57 @@ export class Arvore {
     this.preOrdem(no.dir);
   }
 
+ // Metodo para inserir com arrays
+  inserirPorArray(array: number[]) {
+    if (array.length === 0) {
+      this.raiz = null;
+      return;
+    }
+
+    // remove numeros duplicados no array
+    const valores = [...new Set(array)];
+
+    this.raiz = this.construirPorRegra(valores, null);
+  }
+
+  private construirPorRegra(valores: number[], pai: No | null): No | null {
+    if (valores.length === 0) return null;
+
+    // escolha da raiz
+    let melhorIndice = 0;
+    let melhorDiferenca = Infinity;
+
+    for (let i = 0; i < valores.length; i++) {
+      let menores = 0;
+      let maiores = 0;
+
+      for (let j = 0; j < valores.length; j++) {
+        if (valores[j] < valores[i]) menores++;
+        else if (valores[j] > valores[i]) maiores++;
+      }
+
+      const diferenca = Math.abs(menores - maiores);
+
+      if (diferenca < melhorDiferenca) {
+        melhorDiferenca = diferenca;
+        melhorIndice = i;
+      }
+    }
+
+    const raizValor = valores[melhorIndice];
+    const no = new No(raizValor);
+    no.pai = pai;
+
+    // separa os grupos
+    const esquerda = valores.filter(v => v < raizValor);
+    const direita = valores.filter(v => v > raizValor);
+
+    no.esq = this.construirPorRegra(esquerda, no);
+    no.dir = this.construirPorRegra(direita, no);
+
+    return no;
+  }
+
   // Percorre a árvore em profundidade (DFS) da esquerda para a direita
   // e guarda no array apenas os valores dos nós folha
   private coletarFolhasRec(no: No | null, folhas: number[]): number[] {
